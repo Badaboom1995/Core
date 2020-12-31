@@ -1,4 +1,3 @@
-import { Wrapper } from 'features/Navigation/styled'
 import React, { useState } from 'react'
 import PlanConstructorView from './view'
 

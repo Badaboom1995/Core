@@ -7,6 +7,7 @@ function Stepper(props) {
   var settings = {
     dots: false,
     infinite: false,
+    swipe: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,

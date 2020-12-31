@@ -13,7 +13,7 @@ export const withLayout = Component => (props: any) => {
   const user = useSelector((state: RootState) => state.user)
   const history = useHistory()
   useEffect(() => {
-    if (!user.profile) history.push('/auth')
+    // if (!user.profile) history.push('/auth')
   }, [history, user])
   return (
     <>

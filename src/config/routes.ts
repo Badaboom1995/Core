@@ -9,14 +9,14 @@ export const mainRoutes = [
     component: HomePage,
     title: 'Dashboard',
   },
+  // {
+  //   path: '/',
+  //   component: HomePage,
+  //   title: 'Dashboard',
+  //   exact: true,
+  // },
   {
     path: '/',
-    component: HomePage,
-    title: 'Dashboard',
-    exact: true,
-  },
-  {
-    path: '/plan',
     component: Plan,
     title: 'Plan',
     blankPage: true,

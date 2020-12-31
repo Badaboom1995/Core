@@ -31,7 +31,7 @@ function StatisticsView(props) {
           data-services="vkontakte,facebook,telegram,twitter"
         ></div>
       </LeoSpeaking>
-      <Title>Предыдущие пользователи</Title>
+      {/* <Title>Предыдущие пользователи</Title> */}
       <StatsBlock>
         <StatsTitle>Уже прошли 112 человек</StatsTitle>
         {generateActions().map((url, index) => (

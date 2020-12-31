@@ -64,7 +64,7 @@ function GameView(props) {
   const fifthPhrase = `Кажется одному тут не справиться, переходи дальше.`
 
   const firstTask = ` Найди 2020 и отметь кликом`
-  const secondTask = `Поймай его ${enemyClicked - 1}/5`
+  const secondTask = `Лови ${enemyClicked - 1}/5`
   const thirdTask = ` Выбери действие`
 
   return (

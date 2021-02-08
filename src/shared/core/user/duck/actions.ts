@@ -50,3 +50,8 @@ export const logOutAll = createAsyncThunk<any, void>('user/logOutAll', async () 
   if (res.name) localStorage.removeItem('reflectJWT')
   return res
 })
+
+export const updateUser = createAsyncThunk<any, any>('user/update', async updates => {
+  const res = await userService.updateUser(updates)
+  return res
+})

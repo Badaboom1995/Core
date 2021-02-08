@@ -7,14 +7,14 @@ import HabitInfo from 'features/HabitInfo'
 import { useSelector } from 'react-redux'
 import { RootState } from 'index'
 
-type WithLayoutProps = {}
-
 export const withLayout = Component => (props: any) => {
+  const app = useSelector((state: RootState) => state.app)
   const user = useSelector((state: RootState) => state.user)
   const history = useHistory()
   useEffect(() => {
-    // if (!user.profile) history.push('/auth')
-  }, [history, user])
+    if (!user.profile && app.status !== 2) history.push('/auth')
+    if (user.profile?.new) history.push('/plan/create')
+  }, [app.status, history, user])
   return (
     <>
       {user.profile && (

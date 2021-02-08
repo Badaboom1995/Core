@@ -12,6 +12,7 @@ function Stepper(props) {
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: false,
+    arrows: false,
   }
   function next() {
     const sliderObj = sliderRef.current || { slickNext: () => {} }
@@ -37,7 +38,7 @@ function Stepper(props) {
   })
 
   return (
-    <StepperView settings={settings} sliderRef={sliderRef} next={next} prev={prev}>
+    <StepperView {...props} settings={settings} sliderRef={sliderRef} next={next} prev={prev}>
       {childrenWithProps}
     </StepperView>
   )

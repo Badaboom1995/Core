@@ -3,11 +3,11 @@ import { Button } from 'antd'
 import { darken } from 'polished'
 
 type PrimaryButtonStyle = {
-  fullWidth?: boolean
+  fullwidth?: boolean
 }
 export const PrimaryButton = styled(Button)<PrimaryButtonStyle>`
-  width: ${props => props.fullWidth && '100%'};
-  margin-top: ${props => props.fullWidth && '20px'};
+  width: ${props => props.fullwidth && '100%'};
+  margin-top: ${props => props.fullwidth && '20px'};
   border-radius: 5px;
   background-color: #3a3939;
   border-color: transparent;

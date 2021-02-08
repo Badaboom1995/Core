@@ -10,17 +10,20 @@ type StepperViewProps = {
   prev: () => void
   next: () => void
   children: any
+  hideArrow: Boolean
 }
 
-function StepperView({ settings, sliderRef, children, next, prev }: StepperViewProps) {
+function StepperView({ settings, sliderRef, children, next, prev, hideArrow }: StepperViewProps) {
   return (
     <Wrapper>
       <Slider ref={sliderRef} {...settings}>
         {children}
       </Slider>
-      <PrevButton onClick={prev} type="text" style={{ fontSize: '20px' }}>
-        <ArrowLeftOutlined />
-      </PrevButton>
+      {!hideArrow && (
+        <PrevButton onClick={prev} type="text" style={{ fontSize: '20px' }}>
+          <ArrowLeftOutlined />
+        </PrevButton>
+      )}
     </Wrapper>
   )
 }

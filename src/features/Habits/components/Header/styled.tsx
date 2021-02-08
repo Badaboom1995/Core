@@ -4,17 +4,30 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  @media screen and (max-width: 1024px) {
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 40px;
+  }
 `
 export const Title = styled.h2`
   font-weight: normal;
   margin: 0;
   padding: 15px 0px;
   flex-grow: 1;
+  @media screen and (max-width: 1024px) {
+    flex-grow: 0;
+    font-size: 14px;
+    margin-right: 30px;
+  }
 `
 export const WeekDays = styled.div`
   display: flex;
   font-weight: normal;
   margin-right: 130px;
+  @media screen and (max-width: 1024px) {
+    margin-right: 0;
+  }
 `
 
 export const AddButton = styled.button`

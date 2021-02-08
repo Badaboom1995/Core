@@ -18,6 +18,9 @@ export const Wrapper = styled.div<WrapperProps>`
   padding-left: 20px;
   margin-top: 10px;
   transition: 0.3s all ease;
+  @media screen and (max-width: 767px) {
+    padding-left: 4px;
+  }
   label {
     text-decoration: ${props => (props.currentStatus === 'completed' ? 'line-through' : 'none')};
   }
@@ -30,7 +33,7 @@ export const ProgressBar = styled.div<ProgressBarProps>`
   position: absolute;
   left: 0;
   top: 0;
-  width: ${props => (props.percent > 6.5 ? props.percent : 6.5)}%;
+  width: ${props => (props.percent > 6.5 ? props.percent : 8)}%;
   height: 100px;
   background-color: ${props => props.color};
   z-index: 0;
@@ -73,6 +76,9 @@ export const StyledCheckbox = styled(Checkbox)<CheckboxProps>`
     width: 20px;
     height: 20px;
     border: none;
+    @media screen and (max-width: 767px) {
+      transform: scale(0.7);
+    }
   }
   .ant-checkbox-checked .ant-checkbox-inner {
     background-color: #fff;
@@ -117,9 +123,11 @@ export const Title = styled.span`
   padding: 15px;
   color: #000;
   margin-left: 20px;
-`
-export const Status = styled.div`
-  display: block;
+  @media screen and (max-width: 767px) {
+    margin-left: 0px;
+    font-size: 14px;
+    padding: 0px;
+  }
 `
 export const Info = styled.div`
   display: flex;
@@ -129,6 +137,9 @@ export const Info = styled.div`
   padding: 5px 15px;
   span {
     padding: 3px 0px;
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
   }
 `
 export const StreakIcon = styled.span`
@@ -151,6 +162,9 @@ export const Skip = styled(Button)<SkipProps>`
   border: none;
   border-radius: 0 10px 10px 0;
   padding: 15px 10px;
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
   &[disabled] {
     background-color: ${props => props.theme[props.themename].primary};
     color: #fff;

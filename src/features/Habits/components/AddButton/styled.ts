@@ -18,6 +18,12 @@ export const AddButton = styled.button`
   border: none;
   border-radius: 50%;
   padding: 0px 19px;
+  @media screen and (max-width: 1024px) {
+    background-color: #f6f6f6;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
   cursor: pointer;
   transition: 0.1s all ease;
   &:hover {

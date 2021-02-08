@@ -3,12 +3,11 @@ import { Button } from 'antd'
 
 export const Wrapper = styled.div`
   position: relative;
-  padding: 50px;
-  padding-top: 100px;
+  /* padding: 50px; */
   height: 100vh;
   @media screen and (max-width: 1024px) {
     padding: 10px;
-    padding-top: 70px;
+    padding-top: 00px;
     background-color: #fefefe;
   }
 `
@@ -18,9 +17,11 @@ export const SlideWrapper = styled.div`
 export const ContentWrapper = styled.div`
   width: 500px;
   margin: 0 auto;
+  position: relative;
+  height: 100vh;
   @media screen and (max-width: 1024px) {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 30px);
     overflow: scroll;
   }
 `

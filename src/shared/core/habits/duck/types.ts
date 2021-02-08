@@ -20,6 +20,7 @@ export interface HabitType {
   step: number
   tinySteps: boolean
   neverMissTwice: boolean
+  completed: boolean
   color: string
   icon: string
   duration: string

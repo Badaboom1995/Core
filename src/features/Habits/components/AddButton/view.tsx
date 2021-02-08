@@ -61,7 +61,11 @@ const AddButtonView = () => {
         {modalType === 'create' && <AddHabit onSubmit={handleOk} />}
         {modalType === 'choose' && <Library onSubmit={handleOk} />}
       </StyledModal>
-      <Dropdown overlay={menu} placement="bottomCenter" arrow>
+      <Dropdown
+        overlay={menu}
+        placement={window.innerWidth < 1024 ? 'topRight' : 'bottomCenter'}
+        arrow
+      >
         <AddButton>+</AddButton>
       </Dropdown>
     </>

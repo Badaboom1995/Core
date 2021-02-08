@@ -1,13 +1,29 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
-export const Navigation = styled.nav`
+type NavigationProps = {
+  closed?: boolean
+}
+export const Navigation = styled.nav<NavigationProps>`
   display: block;
   grid-column-start: start;
   grid-column-end: main;
   background-color: ${props => props.theme.default.primary};
   padding: 15px;
-  overflow: scroll;
+  transition: 0.3s all ease;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    position: ${props => props.closed && 'fixed'};
+    left: 0;
+    top: 0;
+    z-index: 9;
+    height: 100vh;
+    padding: 10px;
+    transform: translateX(${props => (props.closed ? '-101%' : '0px')});
+    width: 85vw;
+    box-sizing: border-box;
+  }
 `
 export const NavList = styled.ul`
   padding: 15px 0;
@@ -57,4 +73,15 @@ export const Text = styled.span`
 `
 export const Counter = styled.span`
   font-size: 12px;
+`
+export const CloseButton = styled.button`
+  position: absolute;
+  right: -40px;
+  top: 18px;
+  background-color: #fff;
+  padding: 10px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
 `

@@ -4,6 +4,7 @@ import HabitListView from './view'
 import { selectFilteredHabits } from './selectors'
 import { checkCompleted } from 'utils/custom'
 import { HabitType } from 'shared/core/habits/types'
+
 function Habits() {
   const filteredHabits = useSelector(selectFilteredHabits)
   const sortByComplete = () => {
@@ -15,7 +16,7 @@ function Habits() {
     return [...comingHabits, ...completedHabits]
   }
   const sortedHabits = sortByComplete()
-  return <div>{<HabitListView sortedHabits={sortedHabits} />}</div>
+  return <HabitListView sortedHabits={sortedHabits} />
 }
 
 export default Habits

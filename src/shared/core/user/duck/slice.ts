@@ -4,7 +4,7 @@ import * as actions from './actions'
 import { makeReducer } from 'utils/custom'
 import { toast } from 'react-toastify'
 
-const { logIn, logOut, signUp, getProfile } = actions
+const { logIn, logOut, signUp, getProfile, updateUser } = actions
 
 type UserState = {
   profile: User | null
@@ -64,6 +64,16 @@ const habitsSlice = createSlice({
       (state, payload) => {
         console.log('logOut')
         state.profile = null
+      },
+      state => {
+        console.log('error')
+      },
+    )
+    makeReducer(
+      builder,
+      updateUser,
+      (state, payload) => {
+        state.profile = payload
       },
       state => {
         console.log('error')

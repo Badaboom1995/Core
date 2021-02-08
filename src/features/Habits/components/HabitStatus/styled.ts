@@ -19,6 +19,9 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin-right: 92px;
+  @media screen and (max-width: 767px) {
+    margin-right: 0px;
+  }
 `
 type StatusItemProps = {
   type?: string

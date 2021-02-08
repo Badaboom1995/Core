@@ -1,23 +1,28 @@
 import React from 'react'
 import { RadioGroupStyled } from './styled'
+import { Form } from 'antd'
 
+export type RadioItem = {
+  label: any
+  value: string
+}
 export type RadioGroupProps = {
   color: string
+  options: RadioItem[]
+  width?: string
 }
 
 function RadioGroup(props: RadioGroupProps) {
   return (
-    <RadioGroupStyled
-      optionType="button"
-      buttonStyle="solid"
-      options={[
-        { label: '7 days', value: '7' },
-        { label: '14 days', value: '14' },
-        { label: '21 days', value: '21' },
-        { label: '30 days', value: '30' },
-      ]}
-      color={props.color}
-    />
+    <Form.Item name="time">
+      <RadioGroupStyled
+        optionType="button"
+        buttonStyle="solid"
+        options={props.options}
+        color={props.color}
+        width={props.width}
+      />
+    </Form.Item>
   )
 }
 export default RadioGroup

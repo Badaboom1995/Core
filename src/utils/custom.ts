@@ -15,6 +15,11 @@ export const normalizeData = <T extends { id?: string; _id?: string }>(entities:
   })
 }
 
+export const getNormalizedHabitName = (rawName: string): string => {
+  const removedSpaces = rawName.replace(/\s/g, '')
+  return `${removedSpaces.charAt(0).toUpperCase()}${removedSpaces.slice(1)}`
+}
+
 export const getCurrentStatus = (state: any[]): string => {
   const isCompleted = checkCompleted(state)
   if (!isCompleted) return ''
@@ -28,14 +33,14 @@ export const makeReducer = (
   onFail,
 ) => {
   builder.addCase(action.pending, (state, action) => {
-    state.loading = true
+    // state.loading = true
   })
   builder.addCase(action.fulfilled, (state, action) => {
-    state.loading = false
+    // state.loading = false
     onSuccess(state, action.payload)
   })
   builder.addCase(action.rejected, (state, action) => {
-    state.loading = false
+    // state.loading = false
     onFail(state, action)
   })
 }

@@ -7,16 +7,6 @@ type StatusProps = {
 }
 
 const Status = (props: StatusProps) => {
-  // const toggleStatus = index => {
-  //   const newStatus = status.map((item, ItemIndex) => {
-  //     if (index !== ItemIndex) return item
-  //     if (moment(item.date).isBefore(moment().subtract(1, 'days').toString())) {
-  //       item.type = item.type === 'completed' ? 'skipped' : 'completed'
-  //     }
-  //     return item
-  //   })
-  //   setStatus(newStatus)
-  // }
   const createWeekStatus = currentStatus => {
     const weekStatus: any[] = []
     const currentWeekStatus = currentStatus.filter(item =>

@@ -1,7 +1,8 @@
 import { HomePage } from 'pages/Dashboard'
 import { Auth } from 'pages/Auth'
-import { NotFoundPage } from 'pages/NotFoundPage'
 import { Plan } from 'pages/Plan'
+import { NotFoundPage } from 'pages/NotFoundPage'
+import PlanMaker from 'features/PlanMaker'
 
 export const mainRoutes = [
   {
@@ -9,16 +10,22 @@ export const mainRoutes = [
     component: HomePage,
     title: 'Dashboard',
   },
-  // {
-  //   path: '/',
-  //   component: HomePage,
-  //   title: 'Dashboard',
-  //   exact: true,
-  // },
   {
     path: '/',
+    component: HomePage,
+    title: 'Dashboard',
+    exact: true,
+  },
+  {
+    path: '/plan',
     component: Plan,
     title: 'Plan',
+    exact: true,
+  },
+  {
+    path: '/plan/create',
+    component: PlanMaker,
+    title: 'PlanMaker',
     blankPage: true,
   },
   {

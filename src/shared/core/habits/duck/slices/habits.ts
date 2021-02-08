@@ -2,6 +2,8 @@ import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
 import * as actions from '../actions'
 import { HabitType } from '../types'
 
+//Tech Debt. Move from slicec folder
+
 export const habitsAdapter = createEntityAdapter<HabitType>({
   selectId: habit => habit.id,
   sortComparer: (a, b) => a.createdAt.localeCompare(b.createdAt),
@@ -30,6 +32,7 @@ const habitsSlice = createSlice({
       console.log('pending')
     })
     builder.addCase(getHabits.fulfilled, (state, action) => {
+      console.log(action.payload)
       habitsAdapter.addMany(state, action.payload)
     })
     builder.addCase(getHabits.rejected, (state, action) => {

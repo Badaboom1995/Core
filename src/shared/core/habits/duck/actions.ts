@@ -1,8 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import habitService from 'utils/api/habits'
+import { getNormalizedHabitName } from 'utils/custom'
 
-export const addHabitAsync = createAsyncThunk<any, void>('habit/add', async habit => {
-  console.log(habit)
+export const addHabitAsync = createAsyncThunk<any, any>('habit/add', async habit => {
+  habit.name = getNormalizedHabitName(habit.name)
   const res = await habitService.createHabit(habit)
   res.id = res._id
   delete res._id

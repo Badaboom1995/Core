@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import PlanConstructor from 'features/PlanConstructor'
+import Guide from 'features/Guide'
 
 export function Plan() {
   return (
@@ -9,7 +9,7 @@ export function Plan() {
         <title>Dashboard</title>
         <meta name="description" content="create a plan" />
       </Helmet>
-      <PlanConstructor />
+      <Guide />
     </>
   )
 }

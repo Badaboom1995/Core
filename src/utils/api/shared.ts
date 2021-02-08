@@ -1,8 +1,8 @@
 const serverUrl = 'http://localhost:3001'
-const commonHeaders: HeadersInit = new Headers()
-commonHeaders.set('Content-Type', 'application/json')
 
 export const makeRequest = async (url, method, body?) => {
+  const commonHeaders: HeadersInit = new Headers()
+  commonHeaders.set('Content-Type', 'application/json')
   const JWT = localStorage.reflectJWT
   if (JWT) commonHeaders.append('Authorization', `Bearer ${JWT}`)
   const fetchConfig: any = { method, headers: commonHeaders }

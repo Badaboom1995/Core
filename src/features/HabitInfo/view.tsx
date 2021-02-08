@@ -5,6 +5,7 @@ import { deleteHabitAsync, updateHabitAsync } from 'shared/core/habits/duck/acti
 import HabitForm from 'shared/components/HabitForm'
 import { Button } from 'antd'
 import { HabitType } from 'shared/core/habits/types'
+import { useHistory } from 'react-router-dom'
 
 type HabitInfoProps = {
   habit: HabitType | null
@@ -12,30 +13,40 @@ type HabitInfoProps = {
 function HabitInfoView(props: HabitInfoProps) {
   const { habit } = props
   const dispatch = useDispatch()
+  const history = useHistory()
   return (
-    <Wrapper>
+    <>
       {habit && (
-        <div style={{ textAlign: 'center' }}>
-          <HabitForm
-            onSubmit={habit => {
-              dispatch(updateHabitAsync(habit))
-            }}
-            defaultValues={habit}
-            type="update"
-          />
-          <Button
+        <Wrapper>
+          <button
             onClick={() => {
-              dispatch(deleteHabitAsync(habit))
+              history.goBack()
             }}
-            danger
-            type="text"
-            style={{ marginTop: '10px' }}
           >
-            Delete
-          </Button>
-        </div>
+            back
+          </button>
+          <div style={{ textAlign: 'center' }}>
+            <HabitForm
+              onSubmit={habit => {
+                dispatch(updateHabitAsync(habit))
+              }}
+              defaultValues={habit}
+              type="update"
+            />
+            <Button
+              onClick={() => {
+                dispatch(deleteHabitAsync(habit))
+              }}
+              danger
+              type="text"
+              style={{ marginTop: '10px' }}
+            >
+              Delete
+            </Button>
+          </div>
+        </Wrapper>
       )}
-    </Wrapper>
+    </>
   )
 }
 export default HabitInfoView

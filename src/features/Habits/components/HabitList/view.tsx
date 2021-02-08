@@ -7,11 +7,14 @@ const HabitListView = props => {
   return (
     <>
       <FlipMove enterAnimation="fade" leaveAnimation="none" delay={200}>
-        {sortedHabits.map(habit => (
-          <div key={habit.id}>
-            <HabitCard key={habit.id} habit={habit} />
-          </div>
-        ))}
+        {sortedHabits.map(
+          habit =>
+            !habit.completed && (
+              <div key={habit.id}>
+                <HabitCard key={habit.id} habit={habit} />
+              </div>
+            ),
+        )}
       </FlipMove>
     </>
   )

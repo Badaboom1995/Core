@@ -3,8 +3,10 @@ import React, { useEffect } from 'react'
 import HabitFormView from './view'
 import { Form } from 'antd'
 import { HabitFormProps } from './type'
+import { useHistory } from 'react-router-dom'
 
 const HabitForm = (props: HabitFormProps) => {
+  const history = useHistory()
   const [form] = Form.useForm()
   const innerDefault = {
     id: 1,
@@ -25,6 +27,7 @@ const HabitForm = (props: HabitFormProps) => {
   const onFinish = values => {
     const newHabit = type === 'update' ? { id: defaultValues.id, ...values } : { ...values }
     onSubmit(newHabit)
+    history.push('/dashboard/all')
   }
   const onFail = values => {
     console.log(values)

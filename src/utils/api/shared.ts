@@ -1,4 +1,4 @@
-const serverUrl = 'http://localhost:3001'
+const serverUrl = process.env.REACT_APP_API_URL
 
 export const makeRequest = async (url, method, body?) => {
   console.log(process.env)

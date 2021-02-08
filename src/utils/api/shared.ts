@@ -1,6 +1,7 @@
 const serverUrl = 'http://localhost:3001'
 
 export const makeRequest = async (url, method, body?) => {
+  console.log(process.env)
   const commonHeaders: HeadersInit = new Headers()
   commonHeaders.set('Content-Type', 'application/json')
   const JWT = localStorage.reflectJWT

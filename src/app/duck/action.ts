@@ -8,7 +8,7 @@ export const bootstrap = createAsyncThunk<any, void>('app/bootstrap', async (__,
   await Promise.all([
     await dispatch(getProfile()).then(unwrapResult),
     await dispatch(getHabits()).then(unwrapResult),
-    await dispatch(getPlan()).then(unwrapResult),
     await dispatch(getTemplates()).then(unwrapResult),
+    await dispatch(getPlan()).then(unwrapResult),
   ])
 })
